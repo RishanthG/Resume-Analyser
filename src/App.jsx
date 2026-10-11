@@ -47,7 +47,7 @@ function App() {
         return parsed;
     } catch (err) {
       console.error(err); // Log the error for debugging
-      throw new Error('Failed to parse AI response: ${err.message}');
+      throw new Error(`Failed to parse AI response: ${err.message}`);
     }
   };
   const analyzeResume = async (text) => {
@@ -85,7 +85,7 @@ function App() {
 
     }catch(err){
       console.log("Error during resume analysis:", err);
-      alert("Error :${err.message}");
+      alert(`Error :${err.message}`);
       reset();
     }finally{
       setIsLoading(false);
@@ -117,7 +117,7 @@ function App() {
                className="hidden"
                id = "file-upload" 
               />
-              <label htmlFor="file-upload" className={'inline-block btn-primary ${!aiReady ? "opacity-50 cursor-not-allowed":""}'}>
+              <label htmlFor="file-upload" className={`inline-block btn-primary ${!aiReady ? "opacity-50 cursor-not-allowed":""}`}>
                 Choose PDF File
               </label>
             </div>
